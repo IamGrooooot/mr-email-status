@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { DropdownDirective } from './shared/directives/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
-import { NavbarComponent } from './system/navbar/navbar.component';
+import { NavbarComponent } from './system/shared/components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
