@@ -1,5 +1,5 @@
 .menu-logo
-    background-color: #fff !important
+    background: url(../../assets/Titul_systemlogo.svg) no-repeat    
     border-bottom: 1px solid #c6cfde
     height: 84px
     position: relative
@@ -8,7 +8,7 @@
     -webkit-box-sizing: border-box
     box-sizing: border-box
     float: left
-    display: block!important
+    display: block !important
 
     a
         width: 100%
@@ -22,16 +22,17 @@
 .menu-background-1
     background-color: #c6cfde
     height: 33px
-    padding-left: 24px
+    padding-left: 20px
     width: calc(100% - 240px)
     display: inline-block
     color: #505050
     vertical-align: top
     box-sizing: border-box
-    font: 18px Segoe UI, sans-serif
+    font: 18px sans-serif
+    font-weight: 500
         
     span
-        line-height: 30px
+        line-height: 35px
 
 .menu-background-2
     background-color: #e5edf3
@@ -48,7 +49,51 @@
         width: 100%
 
     a
-        font: 18px Segoe UI, sans-serif
+        font: 18px sans-serif
+        font-weight: 500
+        color: #505050
+
+    .form-inline.pull-right
+        padding-right: 20px
+
+        &.nav-input
+            input, .btn.dropdown-toggle, .btn.btn-primary
+                height: 39px
+                border: 2px solid #2196f2
+                font: 17px sans-serif 
+                font-weight: 500
+                color: #505050
+
+            input
+                width: 600px
+                border-radius: 0
+                border-right: 0
+                border-left: 0
+
+            .btn.dropdown-toggle
+                border-bottom-right-radius: 0
+                border-top-right-radius: 0
+                background-color: #fff
+
+            .btn.btn-primary
+                border-bottom-left-radius: 0
+                border-top-left-radius: 0
+                background-color: #2196f2
+                width: 30px
+                padding: 0
+                img
+                    width: 24px
+                    height: 35px
+
 
     .navbar
-        padding: .4rem 1rem
+        padding: 0
+
+        .nav-link
+            padding: 15px 20px
+
+            &:hover
+                color: #fff
+                background-color: #7598C7
+    
+
