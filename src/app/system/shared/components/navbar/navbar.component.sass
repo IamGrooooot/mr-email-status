@@ -1,6 +1,12 @@
+$header-color-1: #c6cfde
+$header-color-2: #e5edf3
+$text-color: #505050
+$border-bg-color: #2196f2
+$hover-color: #7598C7
+    
 .menu-logo
     background: url(../../../../../assets/Titul_systemlogo.svg) no-repeat    
-    border-bottom: 1px solid #c6cfde
+    border-bottom: 1px solid $header-color-1
     height: 84px
     position: relative
     width: 240px
@@ -20,12 +26,12 @@
             display: none
 
 .menu-background-1
-    background-color: #c6cfde
+    background-color: $header-color-1
     height: 33px
     padding-left: 20px
     width: calc(100% - 240px)
     display: inline-block
-    color: #505050
+    color: $text-color
     vertical-align: top
     box-sizing: border-box
     font: 18px sans-serif
@@ -35,34 +41,29 @@
         line-height: 35px
 
 .menu-background-2
-    background-color: #e5edf3
-    border-bottom-color: #c6cfde
-    border-left: none
+    background-color: $header-color-2
     height: 51px
-    position: relative
-    border-bottom: 1px solid #ded9cd
+    border-bottom: 1px solid $header-color-1
     width: calc(100% - 240px)
     display: inline-block
-
-    .dmenu
-        float: right
-        width: 100%
 
     a
         font: 18px sans-serif
         font-weight: 500
-        color: #505050
+        color: $text-color
 
     .form-inline.pull-right
         padding-right: 20px
+        margin-top: 6px
+        display: inline-flex
 
         &.nav-input
             input, .btn.dropdown-toggle, .btn.btn-primary
                 height: 39px
-                border: 2px solid #2196f2
+                border: 2px solid $border-bg-color
                 font: 17px sans-serif 
                 font-weight: 500
-                color: #505050
+                color: $text-color
 
             input
                 width: 600px
@@ -79,7 +80,7 @@
             .btn.btn-primary
                 border-bottom-left-radius: 0
                 border-top-left-radius: 0
-                background-color: #2196f2
+                background-color: $border-bg-color
                 width: 30px
                 padding: 0
                 img
@@ -92,25 +93,25 @@
             .dropdown-menu.show
                 margin: -2px 0 0 0
                 padding: 0
-                border: 2px solid #2196f2
+                border: 2px solid $border-bg-color
                 
                 .dropdown-item
                     padding: 0.5rem 1.5rem
 
                     &:hover
-                        background-color: #2196f2
+                        background-color: $border-bg-color
                         color: #fff
                         cursor: pointer
 
-    .navbar
-        padding: 0
+    .nav
+        display: inline-flex
 
         .nav-link
             padding: 15px 20px
 
             &:hover
                 color: #fff
-                background-color: #7598C7
+                background-color: $hover-color
 .nav-active
-    background-color: #7598C7 !important
+    background-color: $hover-color !important
     color: #fff !important

@@ -1,8 +1,8 @@
-<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-  <li class="nav-item">
-      <a routerLinkActive="nav-active" class="nav-link" [routerLink]="['/system/outbox', 'active']">Входящие</a>
-  </li>
-  <li class="nav-item">
-      <a routerLinkActive="nav-active" class="nav-link" [routerLink]="['/system/outbox', 'inactive']">Исходящие</a>
-  </li>
-</ul>
+<div class="row active-inactive-header">
+    <div class="col-sm-12">
+        <ul class="nav">
+            <a routerLinkActive="btn-nav-active" class="btn-nav" [routerLink]="['/system/outbox', 'active']">Активные</a>
+            <a routerLinkActive="btn-nav-active" class="btn-nav" [routerLink]="['/system/outbox', 'inactive']">Неактивные</a>
+        </ul>
+    </div>
+</div>
