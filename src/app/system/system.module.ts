@@ -3,20 +3,20 @@ import { CommonModule } from "@angular/common";
 
 import { SystemRoutingModule } from "./system-routing.module";
 import { SharedModule } from "../shared/shared.module";
-import { OutboxComponent } from './outbox/outbox.component';
-import { InboxComponent } from './inbox/inbox.component';
 import { SystemComponent } from "./system.component";
 import { NavbarComponent } from "./shared/components/navbar/navbar.component";
+import { InboxModule } from "./inbox/inbox.module";
+import { OutboxModule } from "./outbox/outbox.module";
 
 @NgModule({
   imports: [
     CommonModule,
     SystemRoutingModule,
-    SharedModule
+    SharedModule,
+    InboxModule,
+    OutboxModule
   ],
   declarations:[
-    OutboxComponent,
-    InboxComponent,
     NavbarComponent,
     SystemComponent
   ],

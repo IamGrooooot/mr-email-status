@@ -1,20 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { DropdownDirective } from './shared/directives/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
-import { NavbarComponent } from './system/shared/components/navbar/navbar.component';
+import { SystemModule } from './system/system.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    DropdownDirective
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    SystemModule
   ],
   providers: [],
   bootstrap: [AppComponent]

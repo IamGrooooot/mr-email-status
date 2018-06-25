@@ -4,6 +4,10 @@ import { RouterModule, Routes } from "@angular/router";
 import { SystemComponent } from "./system.component";
 import { InboxComponent } from "./inbox/inbox.component";
 import { OutboxComponent } from "./outbox/outbox.component";
+import { InboxActiveComponent } from "./inbox/inbox-active/inbox-active.component";
+import { InboxInactiveComponent } from "./inbox/inbox-inactive/inbox-inactive.component";
+import { OutboxActiveComponent } from "./outbox/outbox-active/outbox-active.component";
+import { OutboxInactiveComponent } from "./outbox/outbox-inactive/outbox-inactive.component";
 
 const routes: Routes = [
   {
@@ -12,18 +16,40 @@ const routes: Routes = [
     children: [
       {
         path: 'inbox',
-        component: InboxComponent
+        component: InboxComponent,
+        children:[
+          {
+            path: 'active',
+            component: InboxActiveComponent
+          },
+          {
+            path: 'inactive',
+            component: InboxInactiveComponent
+          }
+        ]
       },
       {
         path: 'outbox',
-        component: OutboxComponent
+        component: OutboxComponent,
+        children:[
+          {
+            path: 'active',
+            component: OutboxActiveComponent
+          },
+          {
+            path: 'inactive',
+            component: OutboxInactiveComponent
+          }
+        ]
       }
     ]
   }
 ]
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes)
+  ],
   exports: [RouterModule]
 })
 export class SystemRoutingModule{
