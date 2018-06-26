@@ -2,7 +2,7 @@ $header-color-1: #c6cfde
 $header-color-2: #e5edf3
 $text-color: #505050
 $border-bg-color: #2196f2
-$hover-color: #7598C7
+$active-color: #7598C7
     
 .menu-logo
     background: url(../../../../../assets/Titul_systemlogo.svg) no-repeat    
@@ -15,6 +15,7 @@ $hover-color: #7598C7
     box-sizing: border-box
     float: left
     display: block !important
+    background-color: #fff
 
     a
         width: 100%
@@ -57,6 +58,9 @@ $hover-color: #7598C7
         margin-top: 6px
         display: inline-flex
 
+        .form-group
+            margin-bottom: 0
+
         &.nav-input
             input, .btn.dropdown-toggle, .btn.btn-primary
                 height: 39px
@@ -66,7 +70,7 @@ $hover-color: #7598C7
                 color: $text-color
 
             input
-                width: 600px
+                width: 400px
                 border-radius: 0
                 border-right: 0
                 border-left: 0
@@ -109,9 +113,11 @@ $hover-color: #7598C7
         .nav-link
             padding: 15px 20px
 
-            &:hover
-                color: #fff
-                background-color: $hover-color
 .nav-active
-    background-color: $hover-color !important
+    background-color: $active-color !important
     color: #fff !important
+
+.header-fixed
+    min-width: 1200px
+    width: 100%
+    position: fixed
