@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import { Email } from '../../shared/models/email.model';
+import { ChoiseMessage } from '../shared/models/choise-message.model';
 
 @Component({
   selector: 'mr-inbox-active',
@@ -8,7 +10,7 @@ import { Email } from '../../shared/models/email.model';
 })
 export class InboxActiveComponent implements OnInit {
 
-  @Output() choiseMessage = new EventEmitter<boolean>();
+  @Output() choiseMessage = new EventEmitter<ChoiseMessage>();
 
   message: Email[] = [
     {
@@ -157,14 +159,16 @@ export class InboxActiveComponent implements OnInit {
     }
   ]
 
+  choise: ChoiseMessage;
+
   constructor() {
-    this.choiseMessage.emit(true);
   }
 
   ngOnInit() {
   }
 
   addChoiseMessage(isnMessage: string){
-    
+    this.choise = new ChoiseMessage(isnMessage, true);    
+    this.choiseMessage.emit(this.choise);
   }
 }

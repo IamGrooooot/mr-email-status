@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { ChoiseMessage } from "../models/choise-message.model";
 
 @Component({
   selector: 'mr-inbox-navbar',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class InboxNavbarComponent implements OnInit{
 
-  @Input() choiseMessage: boolean = false;
+  @Input() choiseMessage: ChoiseMessage;
   constructor() { }
 
   ngOnInit() {

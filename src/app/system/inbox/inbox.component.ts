@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ChoiseMessage } from './shared/models/choise-message.model';
 
 @Component({
   selector: 'mr-inbox',
@@ -6,13 +7,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class InboxComponent implements OnInit {
 
-  @Output() choiseMessage = new EventEmitter<boolean>();
+  @Output() choiseMessage = new EventEmitter<ChoiseMessage>();
   constructor() { }
 
   ngOnInit() {
   }
 
-  onChanged(increased:boolean){
-    this.choiseMessage.emit(increased);
+  onChanged(choiseEmail: ChoiseMessage){
+    this.choiseMessage.emit(choiseEmail);
+    console.log(choiseEmail);
+    
   }
 }
