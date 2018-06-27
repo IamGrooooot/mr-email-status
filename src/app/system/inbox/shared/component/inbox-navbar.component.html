@@ -5,7 +5,10 @@
             <a routerLinkActive="btn-nav-active" class="btn-nav" [routerLink]="['/system/inbox', 'inactive']">Неактивные</a>
         </ul>
     </div>
-    <div class="col-sm-6">
+    <div 
+        class="col-sm-6"
+        *ngIf="choiseMessage"
+    >
         <ul class="nav float-right">
             <a class="btn-nav-reg-t" href="#">Просмотр и регистрация</a>
             <a class="btn-nav-reg-f" href="#">Отказать в регистрации</a>

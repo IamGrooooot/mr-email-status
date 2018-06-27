@@ -7,6 +7,7 @@ import { SystemComponent } from "./system.component";
 import { NavbarComponent } from "./shared/components/navbar/navbar.component";
 import { InboxModule } from "./inbox/inbox.module";
 import { OutboxModule } from "./outbox/outbox.module";
+import { MomentPipe } from "./shared/pipes/moment.pipe";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { OutboxModule } from "./outbox/outbox.module";
   ],
   declarations:[
     NavbarComponent,
-    SystemComponent
+    SystemComponent,
+    MomentPipe
   ],
   providers: []
 })

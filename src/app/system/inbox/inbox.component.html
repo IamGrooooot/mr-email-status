@@ -1,2 +1,6 @@
-<mr-inbox-navbar></mr-inbox-navbar>
-<router-outlet></router-outlet>
+<mr-inbox-navbar
+  [choiseMessage]="choiseMessage"
+></mr-inbox-navbar>
+<router-outlet
+  (choiseMessage)="choiseMessage($event)"
+></router-outlet>
