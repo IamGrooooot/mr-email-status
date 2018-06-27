@@ -10,7 +10,7 @@ import { ChoiseMessage } from '../shared/models/choise-message.model';
 })
 export class InboxActiveComponent implements OnInit {
 
-  @Output() choiseMessage = new EventEmitter<ChoiseMessage>();
+  @Output() onChanged = new EventEmitter<any>();
 
   message: Email[] = [
     {
@@ -159,16 +159,13 @@ export class InboxActiveComponent implements OnInit {
     }
   ]
 
-  choise: ChoiseMessage;
-
   constructor() {
   }
 
   ngOnInit() {
   }
 
-  addChoiseMessage(isnMessage: string){
-    this.choise = new ChoiseMessage(isnMessage, true);    
-    this.choiseMessage.emit(this.choise);
+  addChoiseMessage(isn: string){
+    this.onChanged.emit(isn);
   }
 }

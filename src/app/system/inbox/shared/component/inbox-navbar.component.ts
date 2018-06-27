@@ -8,7 +8,7 @@ import { ChoiseMessage } from "../models/choise-message.model";
 })
 export class InboxNavbarComponent implements OnInit{
 
-  @Input() choiseMessage: ChoiseMessage;
+  @Input() choiseMes: any;
   constructor() { }
 
   ngOnInit() {

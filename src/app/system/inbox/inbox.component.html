@@ -1,6 +1,6 @@
 <mr-inbox-navbar
-  [choiseMessage]="choiseMessage"
+  [choiseMes]="choiseMessage"
 ></mr-inbox-navbar>
 <router-outlet
-  (choiseMessage)="choiseMessage($event)"
+  (onChanged)="onChanged($event)"
 ></router-outlet>
