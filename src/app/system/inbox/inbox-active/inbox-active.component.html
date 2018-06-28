@@ -15,7 +15,7 @@
           <tr
             class="active-message"
             *ngFor="let m of message; let idx = index"
-            [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? '#f8f8f8' : 'transparent'}"
+            [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? '#f8f8f8' : '#fff'}"
             [ngClass]="{'active-message': m.active, 'choise-message': choiseMessage.isn == m.isn}"
             (click)="someClick(m.isn)"
           >
@@ -31,6 +31,9 @@
           </tr>
         </tbody>
       </table>
+    </div>
+    <div class="navigation">
+      
     </div>
   </section>
 </div>
