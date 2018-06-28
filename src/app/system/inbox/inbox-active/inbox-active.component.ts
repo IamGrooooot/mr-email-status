@@ -159,7 +159,10 @@ export class InboxActiveComponent {
     }
   ]
 
-  choiseMessage: ChoiseMessage;
+  choiseMessage: ChoiseMessage = {
+    isn: '0',
+    choise: false
+  };
 
   constructor(
     private someService: SomeService
