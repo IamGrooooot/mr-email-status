@@ -1,8 +1,19 @@
 <div class="row active-inactive-header">
     <div class="col-sm-6">
         <ul class="nav">
-            <a routerLinkActive="btn-nav-active" class="btn-nav" [routerLink]="['/system/inbox', 'active']">Активные</a>
-            <a routerLinkActive="btn-nav-active" class="btn-nav" [routerLink]="['/system/inbox', 'inactive']">Неактивные</a>
+            <a 
+                routerLinkActive="btn-nav-active"
+                class="btn-nav" [routerLink]="['/system/inbox', 'active']"
+            >
+                Активные
+            </a>
+            <a
+                routerLinkActive="btn-nav-active"
+                class="btn-nav" [routerLink]="['/system/inbox', 'inactive']"
+                (click)="reverseButton()"
+            >
+                Неактивные
+            </a>
         </ul>
     </div>
     <div 

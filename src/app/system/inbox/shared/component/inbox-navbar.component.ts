@@ -34,4 +34,11 @@ export class InboxNavbarComponent implements OnInit{
       this.trustedUrl = this.normalUrl.bypassSecurityTrustUrl(this.dangerousUrl);
     });
   }
+
+  reverseButton(){
+    this.gButton = {
+      isn: "0",
+      choise: false
+    }
+  }
 }
