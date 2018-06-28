@@ -1,16 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Email } from '../../shared/models/email.model';
+import { SomeService } from '../../shared/services/some.service';
 import { ChoiseMessage } from '../shared/models/choise-message.model';
 
 @Component({
   selector: 'mr-inbox-active',
   templateUrl: './inbox-active.component.html',
-  styleUrls: ['./inbox-active.component.sass']
+  styleUrls: ['./inbox-active.component.sass'],
+  
 })
-export class InboxActiveComponent implements OnInit {
-
-  @Output() onChanged = new EventEmitter<any>();
+export class InboxActiveComponent {
 
   message: Email[] = [
     {
@@ -159,13 +159,17 @@ export class InboxActiveComponent implements OnInit {
     }
   ]
 
-  constructor() {
-  }
+  choiseMessage: ChoiseMessage;
 
-  ngOnInit() {
-  }
+  constructor(
+    private someService: SomeService
+  ) {}
 
-  addChoiseMessage(isn: string){
-    this.onChanged.emit(isn);
+  someClick(isn){
+    this.choiseMessage = {
+      isn: isn,
+      choise: true
+    }
+    this.someService.newEvent(this.choiseMessage);
   }
 }

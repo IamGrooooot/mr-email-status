@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { SomeService } from "../../../shared/services/some.service";
 import { ChoiseMessage } from "../models/choise-message.model";
 
 @Component({
@@ -8,9 +9,19 @@ import { ChoiseMessage } from "../models/choise-message.model";
 })
 export class InboxNavbarComponent implements OnInit{
 
-  @Input() choiseMes: any;
-  constructor() { }
+  gButton: ChoiseMessage = {
+    isn: "0",
+    choise: false
+  };
+
+  constructor(
+    private someService: SomeService
+  ) { }
 
   ngOnInit() {
+    this.someService.events$.forEach((event) => {
+      console.log(event);
+      this.gButton = event;
+    });
   }
 }
