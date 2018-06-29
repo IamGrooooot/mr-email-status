@@ -29,7 +29,7 @@ export class InboxNavbarComponent implements OnInit{
   ngOnInit() {
     this.someService.events$.forEach((event) => {
       this.gButton = event;
-      //this.dangerousUrl = 'javascript:reg(' + this.gButton.isn + ')';
+      ///this.dangerousUrl = 'javascript:reg(' + this.gButton.isn + ')';
       this.dangerousUrl = 'https://github.com/IamGrooooot';
       this.trustedUrl = this.normalUrl.bypassSecurityTrustUrl(this.dangerousUrl);
     });
