@@ -10,6 +10,7 @@ import { OutboxModule } from "./outbox/outbox.module";
 import { MomentPipe } from "./shared/pipes/moment.pipe";
 import { SomeService } from "./shared/services/some.service";
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { PaginationComponent } from './shared/components/pagination/pagination.c
     NavbarComponent,
     SystemComponent,
     MomentPipe,
-    PaginationComponent
+    PaginationComponent,
+    PageComponent
   ],
   providers: [
     SomeService

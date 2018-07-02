@@ -1,0 +1,152 @@
+{
+    "inbox-active":[{
+        "id":"inbox-active",
+        "button-reg": true,
+        "column":[
+            {
+                "id": "content",
+                "name": "Содержание",
+                "show": true,
+                "width": 60,
+                "sort": {}
+            },
+            {
+                "id": "received",
+                "name": "Получено",
+                "show": true,
+                "width": 10,
+                "sort": {
+                    "active": false,
+                    "order_by": "ASC"
+                }
+            },
+            {
+                "id": "correspondent",
+                "name": "Корреспондент",
+                "show": true,
+                "width": 10,
+                "sort": {}
+            },
+            {
+                "id": "delivery",
+                "name": "Доставка",
+                "show": true,
+                "width": 10,
+                "sort": {
+                    "active": false,
+                    "order_by": "ASC"
+                }
+            },
+            {
+                "id": "viewed",
+                "name": "Просмотрел",
+                "show": true,
+                "width": 10,
+                "sort": {
+                    "active": false,
+                    "order_by": "ASC"
+                }
+            }
+
+        ]
+    }],
+    "inbox-inactive":[{
+        "id":"inbox-inactive",
+        "buttonReg": false,
+        "column":[
+            {
+                "id": "content",
+                "name": "Содержание",
+                "show": true,
+                "width": 50,
+                "sort": {}
+            },
+            {
+                "id": "received",
+                "name": "Получено",
+                "show": true,
+                "width": 10,
+                "sort": {
+                    "active": false,
+                    "order_by": "ASC"
+                }
+            },
+            {
+                "id": "correspondent",
+                "name": "Корреспондент",
+                "show": true,
+                "width": 10,
+                "sort": {}
+            },
+            {
+                "id": "delivery",
+                "name": "Доставка",
+                "show": true,
+                "width": 10,
+                "sort": {
+                    "active": false,
+                    "order_by": "ASC"
+                }
+            },
+            {
+                "id": "status",
+                "name": "Статус",
+                "show": true,
+                "width": 10,
+                "sort": {}
+            },
+            {
+                "id": "actuary",
+                "name": "Регистратор",
+                "show": true,
+                "width": 10,
+                "sort": {}
+            }
+
+        ]
+    }],
+    "OUTBOX_ACTIVE":[{
+        "content": {
+            "show": true,
+            "width": 60
+        },
+        "received": {
+            "show": true,
+            "width": 10
+        },
+        "correspondent": {
+            "show": true,
+            "width": 10
+        },
+        "delivery": {
+            "show": true,
+            "width": 10
+        },
+        "viewed": {
+            "show": true,
+            "width": 10
+        }
+    }],
+    "OUTBOX_INACTIVE":[{
+        "content": {
+            "show": true,
+            "width": 60
+        },
+        "received": {
+            "show": true,
+            "width": 10
+        },
+        "correspondent": {
+            "show": true,
+            "width": 10
+        },
+        "delivery": {
+            "show": true,
+            "width": 10
+        },
+        "viewed": {
+            "show": true,
+            "width": 10
+        }
+    }]
+}

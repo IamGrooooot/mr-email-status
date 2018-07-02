@@ -1,0 +1,68 @@
+<div class="row active-inactive-header">
+  <div class="col-sm-6">
+      <ul class="nav">
+          <a 
+              routerLinkActive="btn-nav-active"
+              class="btn-nav" [routerLink]="['/system'/inbox', 'active']"
+          >
+              Активные
+          </a>
+          <a
+              routerLinkActive="btn-nav-active"
+              class="btn-nav" [routerLink]="['/system/inbox', 'inactive']"
+              (click)="reverseButton()"
+          >
+              Неактивные
+          </a>
+      </ul>
+  </div>
+  <div 
+      class="col-sm-6"
+      *ngIf="gButton.choise"
+  >
+      <ul class="nav float-right">
+          <a class="btn-nav-reg-t" [href]="trustedUrl">Просмотр и регистрация</a>
+          <a class="btn-nav-reg-f" href="#">Отказать в регистрации</a>
+      </ul>
+  </div>
+</div>
+
+<div class="row">
+  <section class="content-area">
+    <div class="table-area">
+      <table class="responsive-table table">
+        <thead >
+          <tr>
+            <th style="width: 60%">Содержание</th>
+            <th style="width: 10%">Получено</th>
+            <th style="width: 10%">Корреспондент</th>
+            <th style="width: 10%">Доставка</th>
+            <th style="width: 10%">Просмотрел</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="active-message"
+            *ngFor="let m of message; let idx = index"
+            [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? '#f8f8f8' : '#fff'}"
+            [ngClass]="{'active-message': m.active, 'choise-message': choiseMessage.isn == m.isn}"
+            (click)="someClick(m.isn)"
+          >
+            <td style="width: 60%">{{m.content}}</td>
+            <td style="width: 10%">{{m.received}}</td>
+            <td style="width: 10%">{{m.correspondent}}</td>
+            <td style="width: 10%">{{m.delivery}}</td>
+            <td style="width: 10%">
+              <p *ngFor="let v of m.viewed">
+                {{v}}
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="navigation">
+      
+    </div>
+  </section>
+</div>
