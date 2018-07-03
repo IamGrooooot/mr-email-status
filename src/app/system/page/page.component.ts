@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { update, load} from "../../../../node_modules/json-update";
 
@@ -183,6 +183,7 @@ export class PageComponent implements OnInit {
   json = require('../shared/consts/page.json');
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private someService: SomeService,
     private domSanitizer: DomSanitizer
@@ -191,10 +192,12 @@ export class PageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
-    this.page = this.json[this.id][0];
-    console.log(this.page.column);
     
+    this.route.params.subscribe(params => {
+      this.id = this.route.snapshot.params['id'];
+      this.page = this.json[this.id][0];
+      console.log(this.page);
+    })
 
     this.someService.events$.forEach((event) => {
       this.gButton = event;
@@ -224,5 +227,9 @@ export class PageComponent implements OnInit {
     this.someService.newEvent(this.choiseMessage);
   }
 
-  
+  loadPage(){
+
+  }
+  ngAfterViewInit(){
+  }
 }

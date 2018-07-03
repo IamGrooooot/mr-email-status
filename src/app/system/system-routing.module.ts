@@ -55,6 +55,7 @@ const routes: Routes = [
   {
     path: 'system/:id',
     component: PageComponent,
+    pathMatch:'full'
   }
 ]
 
