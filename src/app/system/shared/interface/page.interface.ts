@@ -1,6 +1,6 @@
 export interface IPage {
     "id": string;
-    "button-reg": boolean;
+    "button_reg": boolean;
     "column": IColumn[];
 };
 

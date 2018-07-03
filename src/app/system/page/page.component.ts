@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SomeService } from '../shared/services/some.service';
+import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { update, load} from "../../../../node_modules/json-update";
+
+import { SomeService } from '../shared/services/some.service';
 import { ChoiseMessage } from '../inbox/shared/models/choise-message.model';
 import { Email } from '../shared/models/email.model';
-import { ActivatedRoute } from '@angular/router';
+import { IPage } from '../shared/interface/page.interface';
 
 @Component({
   selector: 'mr-page',
@@ -175,6 +178,10 @@ export class PageComponent implements OnInit {
   //Работа с ID
   id: string;
 
+  //Загрузка настройки страницы из json
+  page: IPage;
+  json = require('../shared/consts/page.json');
+
   constructor(
     private route: ActivatedRoute,
     private someService: SomeService,
@@ -185,6 +192,9 @@ export class PageComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
+    this.page = this.json[this.id][0];
+    console.log(this.page.column);
+    
 
     this.someService.events$.forEach((event) => {
       this.gButton = event;
@@ -214,4 +224,5 @@ export class PageComponent implements OnInit {
     this.someService.newEvent(this.choiseMessage);
   }
 
+  
 }

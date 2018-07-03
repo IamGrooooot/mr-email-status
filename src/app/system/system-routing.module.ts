@@ -49,6 +49,10 @@ import { PageComponent } from "./page/page.component";
 
 const routes: Routes = [
   {
+    path:'system',
+    component: SystemComponent,
+  },
+  {
     path: 'system/:id',
     component: PageComponent,
   }

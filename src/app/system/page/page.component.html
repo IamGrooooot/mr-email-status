@@ -3,13 +3,15 @@
       <ul class="nav">
           <a 
               routerLinkActive="btn-nav-active"
-              class="btn-nav" [routerLink]="['/system'/inbox', 'active']"
+              class="btn-nav"
+              [routerLink]="['/system', 'inbox-active']"
           >
               Активные
           </a>
           <a
               routerLinkActive="btn-nav-active"
-              class="btn-nav" [routerLink]="['/system/inbox', 'inactive']"
+              class="btn-nav"
+              [routerLink]="['/system', 'inbox-inactive']"
               (click)="reverseButton()"
           >
               Неактивные
