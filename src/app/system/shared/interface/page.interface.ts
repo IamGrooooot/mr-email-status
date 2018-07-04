@@ -8,8 +8,10 @@ export interface IPage {
 interface IColumn{
     "id": string;
     "name": string;
+    "new_name": string;
     "show": boolean;
     "width": number;
+    "new_width": number;
     "sort": ISort;
 }
 

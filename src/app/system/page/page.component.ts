@@ -175,7 +175,6 @@ export class PageComponent implements OnInit {
   trustedUrl: any;
   dangerousUrl: any;
 
-
   //Работа с ID
   id: string;
 
@@ -229,9 +228,9 @@ export class PageComponent implements OnInit {
     this.someService.newEvent(this.choiseMessage);
   }
 
-  loadPage(){
-
-  }
-  ngAfterViewInit(){
+  isArray(o: any): boolean{
+    if (o instanceof Array)
+      return true;
+    return false;
   }
 }

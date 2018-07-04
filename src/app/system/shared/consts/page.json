@@ -6,15 +6,19 @@
             {
                 "id": "content",
                 "name": "Содержание",
+                "new_name": "Содержание",
                 "show": true,
                 "width": 60,
+                "new_width": 60,
                 "sort": {}
             },
             {
                 "id": "received",
                 "name": "Получено",
+                "new_name": "Получено",
                 "show": true,
                 "width": 10,
+                "new_width": 10,
                 "sort": {
                     "active": false,
                     "order_by": "ASC"
@@ -23,15 +27,19 @@
             {
                 "id": "correspondent",
                 "name": "Корреспондент",
+                "new_name": "Корреспондент",
                 "show": true,
                 "width": 10,
+                "new_width": 10,
                 "sort": {}
             },
             {
                 "id": "delivery",
                 "name": "Доставка",
+                "new_name": "Доставка",
                 "show": true,
                 "width": 10,
+                "new_width": 10,
                 "sort": {
                     "active": false,
                     "order_by": "ASC"
@@ -40,8 +48,10 @@
             {
                 "id": "viewed",
                 "name": "Просмотрел",
+                "new_name": "Просмотрел",
                 "show": true,
                 "width": 10,
+                "new_width": 10,
                 "sort": {
                     "active": false,
                     "order_by": "ASC"
@@ -57,15 +67,19 @@
             {
                 "id": "content",
                 "name": "Содержание",
+                "new_name": "Содержание",
                 "show": true,
                 "width": 50,
+                "new_width": 50,
                 "sort": {}
             },
             {
                 "id": "received",
                 "name": "Получено",
+                "new_name": "Получено",
                 "show": true,
                 "width": 10,
+                "new_width": 10,
                 "sort": {
                     "active": false,
                     "order_by": "ASC"
@@ -74,15 +88,19 @@
             {
                 "id": "correspondent",
                 "name": "Корреспондент",
+                "new_name": "Корреспондент",
                 "show": true,
                 "width": 10,
+                "new_width": 10,
                 "sort": {}
             },
             {
                 "id": "delivery",
                 "name": "Доставка",
+                "new_name": "Доставка",
                 "show": true,
                 "width": 10,
+                "new_width": 10,
                 "sort": {
                     "active": false,
                     "order_by": "ASC"
@@ -91,15 +109,19 @@
             {
                 "id": "status",
                 "name": "Статус",
+                "new_name": "Статус",
                 "show": true,
                 "width": 10,
+                "new_width": 10,
                 "sort": {}
             },
             {
                 "id": "actuary",
                 "name": "Регистратор",
+                "new_name": "Регистратор",
                 "show": true,
                 "width": 10,
+                "new_width": 10,
                 "sort": {}
             }
 
