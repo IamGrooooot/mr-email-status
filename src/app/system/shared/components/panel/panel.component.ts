@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SomeService } from '../../services/some.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { IChoiseMessage } from '../../interface/choise-message.interface';
@@ -11,10 +11,12 @@ import { IChoiseMessage } from '../../interface/choise-message.interface';
 export class PanelComponent implements OnInit {
 
   @Input() choiseMessage: IChoiseMessage;
+  @Output() customization = new EventEmitter<boolean>();
 
+  viewCustomization: boolean = false;
   normalUrl: any;
   trustedUrl: any;
-  dangerousUrl: any;
+  dangerousUrl: any;  
 
   constructor(
     private someService: SomeService,
@@ -35,6 +37,11 @@ export class PanelComponent implements OnInit {
       choise: false,
       visible_button: false
     }
+  }
+
+  showViewCustomization(){
+    this.viewCustomization = true;
+    this.customization.emit(this.viewCustomization);
   }
 
 }

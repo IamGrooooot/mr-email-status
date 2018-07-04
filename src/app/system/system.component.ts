@@ -3,10 +3,12 @@ import { IChoiseMessage } from "./shared/interface/choise-message.interface";
 
 @Component({
   selector: 'mr-system',
-  templateUrl: './system.component.html'
+  templateUrl: './system.component.html',
+  styleUrls: ['./system.component.sass']
 })
 export class SystemComponent {
 
+  showViewCustomization: boolean = false;
   choisedMessage: IChoiseMessage = {
     isn: '0',
     choise: false,
@@ -16,5 +18,9 @@ export class SystemComponent {
   choiseMessage(choiseMessage: IChoiseMessage){
     this.choisedMessage = choiseMessage;
     console.log(this.choisedMessage);
+  }
+
+  viewCustomization(customization: boolean){
+    this.showViewCustomization = customization
   }
 }
