@@ -1,0 +1,33 @@
+<div class="row active-inactive-header">
+    <div class="col-sm-6">
+        <ul class="nav">
+            <a 
+                routerLinkActive="btn-nav-active"
+                class="btn-nav"
+                [routerLink]="['/system', 'inbox-active']"
+            >
+                Активные
+            </a>
+            <a
+                routerLinkActive="btn-nav-active"
+                class="btn-nav"
+                [routerLink]="['/system', 'inbox-inactive']"
+                (click)="reverseButton()"
+            >
+                Неактивные
+            </a>
+        </ul>
+    </div>
+    <div class="col-sm-6">
+        <ul class="nav float-right">
+            <ng-container
+                *ngIf="choiseMessage.visible_button"
+            >
+                <a class="btn-nav-reg-t" [href]="trustedUrl">Просмотр и регистрация</a>
+                <a class="btn-nav-reg-f" href="#">Отказать в регистрации</a>
+            </ng-container>
+            
+            <a class="btn-nav-filter" href="#">Настроить вид</a>
+        </ul>
+    </div>
+</div>

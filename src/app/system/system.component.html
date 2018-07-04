@@ -1,5 +1,11 @@
 <mr-navbar></mr-navbar>
 <div class="container-fluid">
-  <mr-page></mr-page>
+  <mr-panel
+    [choiseMessage]="choisedMessage"
+  ></mr-panel>
+  <mr-page
+    (choisedMessage)="choiseMessage($event)"
+  ></mr-page>
+  <mr-pagination></mr-pagination>
 </div>
 

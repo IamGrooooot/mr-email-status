@@ -10,6 +10,7 @@ import { SomeService } from "./shared/services/some.service";
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
 import { PageComponent } from './page/page.component';
 import { FilterComponent } from "./shared/components/filter/filter.component";
+import { PanelComponent } from './shared/components/panel/panel.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { FilterComponent } from "./shared/components/filter/filter.component";
     MomentPipe,
     PaginationComponent,
     PageComponent,
-    FilterComponent
+    FilterComponent,
+    PanelComponent
   ],
   providers: [
     SomeService
