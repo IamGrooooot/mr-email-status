@@ -1,5 +1,4 @@
-<div class="row">
-  <div class="active-inactive-header">
+  <div class="row active-inactive-header">
     <div class="col-sm-6">
         <ul class="nav">
             <a 
@@ -21,16 +20,19 @@
     </div>
     <div 
         class="col-sm-6"
-        *ngIf="gButton.choise && page.button_reg"
     >
         <ul class="nav float-right">
             <a class="btn-nav-reg-t" [href]="trustedUrl">Просмотр и регистрация</a>
             <a class="btn-nav-reg-f" href="#">Отказать в регистрации</a>
+            <a class="btn-nav-filter" href="#">Настроить вид</a>
         </ul>
+        
     </div>
   </div>
 
-  <div>
+  
+
+  <div class="row">
     <section class="content-area">
       <div class="table-area">
         <table class="responsive-table table">
@@ -80,4 +82,3 @@
       </div>
     </section>
   </div>
-</div>

@@ -9,16 +9,6 @@ const routes: Routes = [
     redirectTo:'/system/inbox-active',
     pathMatch:'full'
   }
-  // {
-  //   path:'system/inbox',
-  //   redirectTo:'/system/inbox/active',
-  //   pathMatch:'full'
-  // },
-  // {
-  //   path:'system/outbox',
-  //   redirectTo:'/system/outbox/active',
-  //   pathMatch:'full'
-  // }
 ]
 
 @NgModule({
