@@ -1,81 +1,83 @@
-<div class="active-inactive-header">
-  <div class="col-sm-6">
-      <ul class="nav">
-          <a 
-              routerLinkActive="btn-nav-active"
-              class="btn-nav"
-              [routerLink]="['/system', 'inbox-active']"
-          >
-              Активные
-          </a>
-          <a
-              routerLinkActive="btn-nav-active"
-              class="btn-nav"
-              [routerLink]="['/system', 'inbox-inactive']"
-              (click)="reverseButton()"
-          >
-              Неактивные
-          </a>
-      </ul>
+<div class="row">
+  <div class="active-inactive-header">
+    <div class="col-sm-6">
+        <ul class="nav">
+            <a 
+                routerLinkActive="btn-nav-active"
+                class="btn-nav"
+                [routerLink]="['/system', 'inbox-active']"
+            >
+                Активные
+            </a>
+            <a
+                routerLinkActive="btn-nav-active"
+                class="btn-nav"
+                [routerLink]="['/system', 'inbox-inactive']"
+                (click)="reverseButton()"
+            >
+                Неактивные
+            </a>
+        </ul>
+    </div>
+    <div 
+        class="col-sm-6"
+        *ngIf="gButton.choise && page.button_reg"
+    >
+        <ul class="nav float-right">
+            <a class="btn-nav-reg-t" [href]="trustedUrl">Просмотр и регистрация</a>
+            <a class="btn-nav-reg-f" href="#">Отказать в регистрации</a>
+        </ul>
+    </div>
   </div>
-  <div 
-      class="col-sm-6"
-      *ngIf="gButton.choise && page.button_reg"
-  >
-      <ul class="nav float-right">
-          <a class="btn-nav-reg-t" [href]="trustedUrl">Просмотр и регистрация</a>
-          <a class="btn-nav-reg-f" href="#">Отказать в регистрации</a>
-      </ul>
-  </div>
-</div>
 
-<div>
-  <section class="content-area">
-    <div class="table-area">
-      <table class="responsive-table table">
-        <thead>
-          <tr>
-            <th
-              *ngFor="let c of page.column"
-              [ngStyle]="{'width': c.width + '%'}"
-            >
-              {{c.name}}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            class="active-message"
-            *ngFor="let m of page.message; let idx = index"
-            [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? '#f8f8f8' : '#fff'}"
-            [ngClass]="{'active-message': m.active, 'choise-message': choiseMessage.isn == m.isn}"
-            (click)="someClick(m.isn)"
-          >
-            <td
-              *ngFor="let c of page.column"
-              [ngStyle]="{'width': c.width + '%'}"
-            >
-              <ng-container
-                *ngIf="isArray(m[c.id]); then thenBlock else elseBlock"
+  <div>
+    <section class="content-area">
+      <div class="table-area">
+        <table class="responsive-table table">
+          <thead>
+            <tr>
+              <th
+                *ngFor="let c of page.column"
+                [ngStyle]="{'width': c.width + '%'}"
               >
-              </ng-container>
-              <ng-template #thenBlock>
-                <p
-                  *ngFor="let v of m[c.id]"
+                {{c.name}}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="active-message"
+              *ngFor="let m of page.message; let idx = index"
+              [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? '#f8f8f8' : '#fff'}"
+              [ngClass]="{'active-message': m.active, 'choise-message': choiseMessage.isn == m.isn}"
+              (click)="someClick(m.isn)"
+            >
+              <td
+                *ngFor="let c of page.column"
+                [ngStyle]="{'width': c.width + '%'}"
+              >
+                <ng-container
+                  *ngIf="isArray(m[c.id]); then thenBlock else elseBlock"
                 >
-                  {{v}}
-                </p>
-              </ng-template>
-              <ng-template #elseBlock>
-                {{m[c.id]}}
-              </ng-template>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="navigation">
-      
-    </div>
-  </section>
+                </ng-container>
+                <ng-template #thenBlock>
+                  <p
+                    *ngFor="let v of m[c.id]"
+                  >
+                    {{v}}
+                  </p>
+                </ng-template>
+                <ng-template #elseBlock>
+                  {{m[c.id]}}
+                </ng-template>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="navigation">
+        
+      </div>
+    </section>
+  </div>
 </div>

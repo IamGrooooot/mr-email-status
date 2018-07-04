@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { update, load} from "../../../../node_modules/json-update";
 
 import { SomeService } from '../shared/services/some.service';
-import { ChoiseMessage } from '../inbox/shared/models/choise-message.model';
+import { ChoiseMessage } from '../shared/models/choise-message.model';
 import { Email } from '../shared/models/email.model';
 import { IPage } from '../shared/interface/page.interface';
 import { IMessageInboxActive } from '../shared/interface/message.interfase';

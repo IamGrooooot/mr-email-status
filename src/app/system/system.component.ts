@@ -4,6 +4,5 @@ import { Component } from "@angular/core";
   selector: 'mr-system',
   templateUrl: './system.component.html'
 })
-export class SystemComponent{
-  
+export class SystemComponent {
 }
