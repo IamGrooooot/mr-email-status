@@ -7,6 +7,7 @@ import { SomeService } from '../shared/services/some.service';
 import { ChoiseMessage } from '../inbox/shared/models/choise-message.model';
 import { Email } from '../shared/models/email.model';
 import { IPage } from '../shared/interface/page.interface';
+import { IMessageInboxActive } from '../shared/interface/message.interfase';
 
 @Component({
   selector: 'mr-page',
@@ -16,7 +17,7 @@ import { IPage } from '../shared/interface/page.interface';
 export class PageComponent implements OnInit {
 
   //База для тестирования
-  message: Email[] = [
+  message: IMessageInboxActive[] = [
     {
       content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nesciunt at dolores iusto ipsa labore voluptates! Culpa et nemo nostrum facilis ullam blanditiis dolores corporis cum tempora impedit, voluptate magnam, a ad? Aspernatur quo odio voluptatibus, similique voluptate quaerat alias",
       received: new Date().toLocaleDateString(),
@@ -196,6 +197,7 @@ export class PageComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = this.route.snapshot.params['id'];
       this.page = this.json[this.id][0];
+      this.page.message = this.message;
       console.log(this.page);
     })
 

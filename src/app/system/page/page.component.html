@@ -37,11 +37,10 @@
     <div class="table-area">
       <table class="responsive-table table">
         <thead>
-          <tr
-            *ngFor="let c of page.column"
-          >
+          <tr>
             <th
-              [ngStyle]="{'width': c.width+'%'}"
+              *ngFor="let c of page.column"
+              [ngStyle]="{'width': c.width + '%'}"
             >
               {{c.name}}
             </th>

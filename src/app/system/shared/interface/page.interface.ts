@@ -2,6 +2,7 @@ export interface IPage {
     "id": string;
     "button_reg": boolean;
     "column": IColumn[];
+    "message": any[];
 };
 
 interface IColumn{
