@@ -11,6 +11,11 @@ import { PaginationComponent } from './shared/components/pagination/pagination.c
 import { PageComponent } from './page/page.component';
 import { FilterComponent } from "./shared/components/filter/filter.component";
 import { PanelComponent } from './shared/components/panel/panel.component';
+import { PreviewComponent } from './shared/components/preview/preview.component';
+import { ButtonsComponent } from './shared/components/preview/buttons/buttons.component';
+import { InfoComponent } from './shared/components/preview/info/info.component';
+import { FilesComponent } from './shared/components/preview/files/files.component';
+import { ReportComponent } from './shared/components/preview/report/report.component';
 
 @NgModule({
   imports: [
@@ -25,7 +30,12 @@ import { PanelComponent } from './shared/components/panel/panel.component';
     PaginationComponent,
     PageComponent,
     FilterComponent,
-    PanelComponent
+    PanelComponent,
+    PreviewComponent,
+    ButtonsComponent,
+    InfoComponent,
+    FilesComponent,
+    ReportComponent
   ],
   providers: [
     SomeService
