@@ -1,6 +1,7 @@
 <div
   *ngIf="showViewCustomization"
   class="shadow-view-customization"
+  (click)="closeViewCustomization()"
 >
 </div>
 <mr-filter *ngIf="showViewCustomization"></mr-filter>

@@ -23,4 +23,8 @@ export class SystemComponent {
   viewCustomization(customization: boolean){
     this.showViewCustomization = customization
   }
+
+  closeViewCustomization(){
+    this.showViewCustomization = false;
+  }
 }

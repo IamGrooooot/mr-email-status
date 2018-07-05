@@ -8,32 +8,38 @@
 .table-area 
   z-index: -1
   margin-top: 34px
+  max-height: calc(100% - 540px) !important
+  overflow-y: auto
+  width: 1280px
 
-table.responsive-table
-  tbody
-    tr
+table
+  margin-bottom: 0
 
-      &.active-message
-        font-weight: 600
-        color: black
+  &.responsive-table
+    tbody
+      tr
 
-      &.choise-message
-        background-color: #a9ddfe !important
+        &.active-message
+          font-weight: 600
+          color: black
 
-      &:hover
-        cursor: pointer
-      
-      td
-        padding: 0.5rem
-        border-bottom: 1px solid #b6b6b6
+        &.choise-message
+          background-color: #a9ddfe !important
 
-        p
-          margin-bottom: 5px
+        &:hover
+          cursor: pointer
+        
+        td
+          padding: 0.5rem
+          border-bottom: 1px solid #b6b6b6
+
+          p
+            margin-bottom: 5px
 
   thead 
     position: fixed
     top: 144px
-    width: 100%
+    width: 1280px
     display: table
     background-color: #dde6ed
 
