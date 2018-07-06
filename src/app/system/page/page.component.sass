@@ -2,7 +2,7 @@
   height: 0
 
 .content-area
-  padding-top: 142px
+  padding-top: 144px
   font: 13px sans-serif
   font-weight: 400
   color: #505050
@@ -13,13 +13,17 @@
   overflow-y: auto
   min-width: 1280px
   position: absolute
+  border-bottom: 1px solid #7598C7
+  border-top: 1px solid #7598C7
 
 @media (min-width: 1920px)
   .table-area
-    max-height: calc(100% - 200px) !important
+    max-height: calc(100% - 205px) !important
     width: 1280px
+    
   thead
     width: 1263px
+    min-width: 1263px
 
 
 @media (max-width: 1919px)
@@ -28,6 +32,8 @@
     width: 100%
   thead
     width: calc(100% - 17px)
+    min-width: 1280px    
+
 
 
 table
@@ -60,7 +66,6 @@ table
   thead 
     position: fixed
     top: 144px
-    min-width: 1280px    
     display: table
     background-color: #dde6ed
 
