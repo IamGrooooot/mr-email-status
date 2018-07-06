@@ -6,14 +6,19 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class EmailService extends BaseApi{
+
   constructor(
     public httpClient: HttpClient
   ){
     super(httpClient)
   }
 
-  getEmail() : Observable<any>{
-    return this.httpClient.get('');
+  getEmail(url: string) : Observable<any>{
+    return this.httpClient.get(url);
+  }
+
+  postEmail(url: string) : Observable<any>{
+    return this.httpClient.post(url, {});
   }
 
   updateBufMessage(isnMessage: string) : Observable<any>{

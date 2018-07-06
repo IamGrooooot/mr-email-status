@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { IPage } from '../shared/interface/page.interface';
 import { IMessageInboxActive } from '../shared/interface/message.interfase';
 import { IChoiseMessage } from '../shared/interface/choise-message.interface';
+import { HttpClient } from '@angular/common/http';
+import { EmailService } from '../shared/services/email.services';
 
 @Component({
   selector: 'mr-page',
@@ -13,6 +15,8 @@ import { IChoiseMessage } from '../shared/interface/choise-message.interface';
 export class PageComponent implements OnInit {
 
   @Output() choisedMessage = new EventEmitter<IChoiseMessage>();
+
+  
   
   // База для тестирования
   message: IMessageInboxActive[] = [
@@ -177,13 +181,13 @@ export class PageComponent implements OnInit {
   };
 
   constructor(
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-
+    
     this.route.params.subscribe(params => {
-      this.id = this.route.snapshot.params['id'];
+      this.id = this.route.snapshot.params['page'];
       this.page = this.json[this.id][0];
       this.page.message = this.message;
       console.log(this.page);

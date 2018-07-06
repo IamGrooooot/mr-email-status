@@ -16,6 +16,7 @@ import { ButtonsComponent } from './shared/components/preview/buttons/buttons.co
 import { InfoComponent } from './shared/components/preview/info/info.component';
 import { FilesComponent } from './shared/components/preview/files/files.component';
 import { ReportComponent } from './shared/components/preview/report/report.component';
+import { EmailService } from "./shared/services/email.services";
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { ReportComponent } from './shared/components/preview/report/report.compo
     ReportComponent
   ],
   providers: [
-    SomeService
+    SomeService,
+    EmailService
   ]
 })
 export class SystemModule{

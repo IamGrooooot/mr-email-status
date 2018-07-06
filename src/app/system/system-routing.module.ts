@@ -9,7 +9,11 @@ const routes: Routes = [
     component: SystemComponent,
   },
   {
-    path: 'system/:id',
+    path: 'system/:page',
+    component: SystemComponent,
+  }  ,
+  {
+    path: 'system/:page/:id',
     component: SystemComponent,
   }
 ]

@@ -7,11 +7,26 @@
 
 .table-area 
   z-index: -1
-  margin-top: 34px
-  max-height: calc(100% - 235px) !important
+  margin-top: 35px
   overflow-y: auto
-  width: 1280px
+  min-width: 1280px
   position: absolute
+
+@media (min-width: 1920px)
+  .table-area
+    max-height: calc(100% - 235px) !important
+    width: 1280px
+  thead
+    width: 1265px
+
+
+@media (max-width: 1919px)
+  .table-area
+    max-height: calc(100% - 485px) !important
+    width: 100%
+  thead
+    width: 100%
+
 
 table
   margin-bottom: 0
@@ -40,7 +55,7 @@ table
   thead 
     position: fixed
     top: 144px
-    width: 1280px
+    
     display: table
     background-color: #dde6ed
 

@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class BaseApi{
-  private readonly baseApi: string = 'http://localhost/x173/MREmailStatus/Services/EmailParse.asmx/EmailMessage';
+  private readonly baseApi: string = 'http://localhost/x173/MREmailStatus/Services/EmailParse.asmx/';
 
   constructor(
     public httpClient: HttpClient
