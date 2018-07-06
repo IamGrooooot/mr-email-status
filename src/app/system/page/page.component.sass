@@ -1,3 +1,6 @@
+.mr-page
+  height: 0
+
 .content-area
   padding-top: 142px
   font: 13px sans-serif
@@ -7,25 +10,24 @@
 
 .table-area 
   z-index: -1
-  margin-top: 35px
   overflow-y: auto
   min-width: 1280px
   position: absolute
 
 @media (min-width: 1920px)
   .table-area
-    max-height: calc(100% - 235px) !important
+    max-height: calc(100% - 200px) !important
     width: 1280px
   thead
-    width: 1265px
+    width: 1263px
 
 
 @media (max-width: 1919px)
   .table-area
-    max-height: calc(100% - 485px) !important
+    max-height: calc(100% - 450px) !important
     width: 100%
   thead
-    width: 100%
+    width: calc(100% - 17px)
 
 
 table
@@ -34,6 +36,9 @@ table
   &.responsive-table
     tbody
       tr
+        &:first-child
+            td
+              padding-top: 40px
 
         &.active-message
           font-weight: 600
@@ -55,7 +60,7 @@ table
   thead 
     position: fixed
     top: 144px
-    
+    min-width: 1280px    
     display: table
     background-color: #dde6ed
 

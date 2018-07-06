@@ -1,3 +1,46 @@
-.preview
-    left: 1295px
-    position: absolute
+mr-buttons
+    width: 100%
+    
+mr-info
+    background-color: gray
+
+mr-files
+    background-color: red
+
+mr-report
+    background-color: yellow
+
+.mr-preview
+    background-color: #e5edf3
+    border: 1px solid #7598C7
+    width: 100%
+        
+@media (min-width: 1920px)
+    mr-info, mr-files, mr-report
+        width: 100%
+
+    .mr-preview
+        left: 1295px
+        top: 143px
+        position: absolute
+        width: calc(100% - 1280px)
+        height: calc(100% - 201px)
+
+@media (max-width: 1919px)
+    mr-buttons
+        width: 100%
+        min-width: 1280px
+    .mr-preview
+        top: calc(100% - 308px)
+        position: absolute
+        width: 100%
+        height: 250px
+
+        mr-info
+            width: 33.3%
+
+        mr-files
+            width: 33.3%
+
+        mr-report
+            width: 33.4%
