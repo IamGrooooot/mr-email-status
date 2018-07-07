@@ -23,6 +23,7 @@
         width: 100%
         min-width: 1280px
     .mr-preview
+        min-width: 1280px
         top: calc(100% - 307px)
         position: absolute
         width: 100%
@@ -33,9 +34,23 @@
 
         .mr-info
             width: 33.3%
+            float: left
 
         .mr-files
             width: 33.3%
+            float: left
 
         .mr-report
             width: 33.4%
+            float: left
+
+@media (max-width: 1295px)
+    .mr-preview
+        .mr-info
+            width: calc(33.3% - 3px)
+
+        .mr-files
+            width: calc(33.3% - 3px)
+
+        .mr-report
+            width: calc(33.4% - 3px)
