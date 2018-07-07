@@ -4,12 +4,51 @@
         "button_reg": true,
         "column":[
             {
-                "id": "content",
-                "name": "Содержание",
-                "new_name": "Содержание",
+                "id": "checkbox",
+                "name": "",
+                "new_name": "",
                 "show": true,
-                "width": 60,
-                "new_width": 60,
+                "width": 2,
+                "new_width": 2,
+                "sort": {}
+            },
+            {
+                "id": "new",
+                "name": "Новые",
+                "new_name": "Новые",
+                "show": true,
+                "width": 4,
+                "new_width":4,
+                "sort": {
+                    "active": false,
+                    "order_by": "ASC"
+                }
+            },
+            {
+                "id": "from",
+                "name": "От",
+                "new_name": "От",
+                "show": true,
+                "width": 10,
+                "new_width": 10,
+                "sort": {}
+            },
+            {
+                "id": "email",
+                "name": "Эл. адрес отправителя",
+                "new_name": "Эл. адрес отправителя",
+                "show": true,
+                "width": 10,
+                "new_width": 10,
+                "sort": {}
+            },
+            {
+                "id": "recipient",
+                "name": "Получатель",
+                "new_name": "Получатель",
+                "show": true,
+                "width": 10,
+                "new_width": 10,
                 "sort": {}
             },
             {
@@ -17,41 +56,59 @@
                 "name": "Получено",
                 "new_name": "Получено",
                 "show": true,
-                "width": 10,
-                "new_width": 10,
+                "width": 8,
+                "new_width": 8,
                 "sort": {
                     "active": false,
                     "order_by": "ASC"
                 }
             },
             {
-                "id": "correspondent",
-                "name": "Корреспондент",
-                "new_name": "Корреспондент",
+                "id": "topic",
+                "name": "Тема",
+                "new_name": "Тема",
+                "show": true,
+                "width": 21,
+                "new_width": 21,
+                "sort": {}
+            },
+            {
+                "id": "pass",
+                "name": "Канал",
+                "new_name": "Канал",
+                "show": true,
+                "width": 6,
+                "new_width": 6,
+                "sort": {
+                    "active": false,
+                    "order_by": "ASC"
+                }
+            },
+            {
+                "id": "whom",
+                "name": "Кому",
+                "new_name": "Кому",
                 "show": true,
                 "width": 10,
                 "new_width": 10,
                 "sort": {}
             },
             {
-                "id": "delivery",
-                "name": "Доставка",
-                "new_name": "Доставка",
+                "id": "doc_num",
+                "name": "№ док. у корреспондента",
+                "new_name": "№ док. у корреспондента",
                 "show": true,
-                "width": 10,
-                "new_width": 10,
-                "sort": {
-                    "active": false,
-                    "order_by": "ASC"
-                }
+                "width": 14,
+                "new_width": 14,
+                "sort": {}
             },
             {
                 "id": "viewed",
                 "name": "Просмотрел",
                 "new_name": "Просмотрел",
                 "show": true,
-                "width": 10,
-                "new_width": 10,
+                "width": 9,
+                "new_width": 9,
                 "sort": {
                     "active": false,
                     "order_by": "ASC"

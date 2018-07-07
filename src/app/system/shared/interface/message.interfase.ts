@@ -1,4 +1,4 @@
-export interface IMessageInboxActive {
+export interface IMessageInboxActiveOld {
   "content": string;
   "received": string;
   "correspondent":string;
@@ -6,6 +6,21 @@ export interface IMessageInboxActive {
   "viewed": string[];
   "isn": number;
   "active": boolean;
+}
+
+export interface IMessageInboxActive {
+  "checkbox": boolean;
+  "new": boolean;
+  "from": string;
+  "email": string;
+  "recipient": string;
+  "received": string;
+  "topic": string;
+  "pass":string;
+  "whom": string;
+  "doc_num": string;
+  "viewed": string[];
+  "isn": number;
 }
 
 export interface IMessageInboxInactive {
