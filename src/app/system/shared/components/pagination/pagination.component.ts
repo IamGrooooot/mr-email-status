@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IMessageInboxActive } from '../../interface/message.interfase';
-import { IPagination } from '../../interface/pagination.interface';
+import { IPagination, INavPagination } from '../../interface/pagination.interface';
 
 @Component({
   selector: 'mr-pagination',
@@ -14,11 +14,10 @@ export class PaginationComponent implements OnInit {
   @Input() pagination: IPagination;
   // Работа с URL
   pageId: string;
-  pageNum: string;
+  pageNum: number;
   countMessage: number;
 
   countNavPagination: number;
-  navPagination: string[];
 
   constructor(
     private route: ActivatedRoute
@@ -31,44 +30,76 @@ export class PaginationComponent implements OnInit {
       this.countMessage = this.pagination.countMessage;
       this.countNavPagination = Math.ceil(this.countMessage / this.pagination.onPageCountMessage);
       this.CreateNav(this.countNavPagination);
-      console.log(this.navPagination);
     })
   }
 
   private CreateNav(i: number){
-    this.navPagination = [];
+    this.Clean();
     if (i < 8){
       for(let n = 1; n <= i; n++ )
       {
-        this.navPagination.push(n.toString());
+        this.Push(n);
       }
     }
     if (i > 7){
-      this.navPagination.push("<", "1");
+      this.Push("<");
+      this.Push("1");
+
       if (+this.pageNum < 5){
         for(let n = 2; n < 6; n++ )
         {
-          this.navPagination.push(n.toString());
+          this.Push(n);
         }
-        this.navPagination.push("...");
+        this.Push("...");
       }
       else if(i - +this.pageNum <= 3){
-        this.navPagination.push("...");
+        this.Push("...");
         for(let n = i - 4; n <= i - 1; n++ )
         {
-          this.navPagination.push(n.toString());
+          this.Push(n);
         }
       }
       else{
-        this.navPagination.push("...");
+        this.Push("...");
         for(let n = +this.pageNum - 1; n <= +this.pageNum + 1; n++ )
         {
-          this.navPagination.push(n.toString());
+          this.Push(n);
         }
-        this.navPagination.push("...");
+        this.Push("...");
       }
-      this.navPagination.push(this.countNavPagination.toString(), ">");
+      this.Push(this.countNavPagination);
+      this.Push(">");
     }
+  }
+  
+  private Push(obj: any){
+    let navPagination: INavPagination = {
+      Id: 0,
+      Name: ''
+    };
+
+    navPagination.Name = obj.toString();
+    switch(obj){
+      case "<":
+        navPagination.Id = +this.pageNum - 1;
+        break;
+      case ">":
+        navPagination.Id = +this.pageNum + 1;
+        break;
+      case "...":
+        navPagination.Id = -1;
+        break;
+      default:
+        navPagination.Id = +obj;
+        break;
+      }
+
+    this.pagination.navPagination.push(navPagination);
+    console.log(this.pagination);
+    }
+
+  private Clean(){
+    this.pagination.navPagination = [];
   }
 
 }

@@ -1,25 +1,12 @@
 <div class="mr-pagination row">
     <nav class="nav">
-        <a
-            routerLinkActive="nav-active"
+        <a *ngFor="let n of pagination.navPagination"
+            routerLinkActive="mr-pagination-active"
             class="nav-link"
-            [routerLink]="['/system', 'outbox']"
+            [ngClass]="{'mr-disabled': n.Id === -1}"
+            [routerLink]="['/system',pageId ,n.Id]"
         >
-            1
-        </a>
-        <a
-            routerLinkActive="nav-active"
-            class="nav-link"
-            [routerLink]="['/system', 'outbox']"
-        >
-            >
-        </a>
-        <a
-            routerLinkActive="nav-active"
-            class="nav-link mr-pagination-active"
-            [routerLink]="['/system', 'outbox']"
-        >
-            3
+            <span>{{n.Name}}</span>
         </a>
     </nav>
 </div>

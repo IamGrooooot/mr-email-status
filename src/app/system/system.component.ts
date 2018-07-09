@@ -530,7 +530,8 @@ export class SystemComponent implements OnInit{
   ngOnInit(){
     this.pagination = {
       onPageCountMessage : 2,
-      countMessage: this.message.length
+      countMessage: this.message.length,
+      navPagination: []
     }
   }
 
