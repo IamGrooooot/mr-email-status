@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IMessageInboxActive } from '../../interface/message.interfase';
+import { IMessageInboxActive } from '../../interface/message.interface';
 import { IPagination, INavPagination } from '../../interface/pagination.interface';
+import { IPage } from '../../interface/page.interface';
 
 @Component({
   selector: 'mr-pagination',
@@ -12,11 +13,9 @@ export class PaginationComponent implements OnInit {
 
   @Input() message: IMessageInboxActive[];
   @Input() pagination: IPagination;
+  @Input() page: IPage;
   // Работа с URL
-  pageId: string;
-  pageNum: number;
   countMessage: number;
-
   countNavPagination: number;
 
   constructor(
@@ -25,8 +24,6 @@ export class PaginationComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.pageId = this.route.snapshot.params['page'];
-      this.pageNum = this.route.snapshot.params['id'];
       this.countMessage = this.pagination.countMessage;
       this.countNavPagination = Math.ceil(this.countMessage / this.pagination.onPageCountMessage);
       this.CreateNav(this.countNavPagination);
@@ -45,14 +42,14 @@ export class PaginationComponent implements OnInit {
       this.Push("<");
       this.Push("1");
 
-      if (+this.pageNum < 5){
+      if (this.page.id < 5){
         for(let n = 2; n < 6; n++ )
         {
           this.Push(n);
         }
         this.Push("...");
       }
-      else if(i - +this.pageNum <= 3){
+      else if(i - this.page.id <= 3){
         this.Push("...");
         for(let n = i - 4; n <= i - 1; n++ )
         {
@@ -61,7 +58,7 @@ export class PaginationComponent implements OnInit {
       }
       else{
         this.Push("...");
-        for(let n = +this.pageNum - 1; n <= +this.pageNum + 1; n++ )
+        for(let n = this.page.id - 1; n <= this.page.id + 1; n++ )
         {
           this.Push(n);
         }
@@ -81,10 +78,10 @@ export class PaginationComponent implements OnInit {
     navPagination.Name = obj.toString();
     switch(obj){
       case "<":
-        navPagination.Id = +this.pageNum - 1;
+        navPagination.Id = this.page.id - 1;
         break;
       case ">":
-        navPagination.Id = +this.pageNum + 1;
+        navPagination.Id = this.page.id + 1;
         break;
       case "...":
         navPagination.Id = -1;
@@ -95,8 +92,7 @@ export class PaginationComponent implements OnInit {
       }
 
     this.pagination.navPagination.push(navPagination);
-    console.log(this.pagination);
-    }
+  }
 
   private Clean(){
     this.pagination.navPagination = [];

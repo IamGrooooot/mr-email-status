@@ -12,13 +12,15 @@
     [choiseMessage]="choisedMessage"
     (customization)="viewCustomization($event)"
   ></mr-panel>
-  <mr-page
-    [message]="message"
+  <mr-table
+    [page]="page"
+    [_message]="viewModel"
     (choisedMessage)="choiseMessage($event)"
-  ></mr-page>
+  ></mr-table>
   <mr-preview></mr-preview>
   <mr-pagination
     [message]="message"
     [pagination]="pagination"
+    [page]="page"
   ></mr-pagination>
 </div>

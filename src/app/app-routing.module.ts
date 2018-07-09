@@ -4,7 +4,7 @@ import { Routes, RouterModule} from '@angular/router';
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/system/inbox-active',
+    redirectTo:'/system/inbox-active/1',
     pathMatch:'full'
   }
 ]

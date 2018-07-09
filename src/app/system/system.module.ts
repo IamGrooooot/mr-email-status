@@ -8,7 +8,7 @@ import { NavbarComponent } from "./shared/components/navbar/navbar.component";
 import { MomentPipe } from "./shared/pipes/moment.pipe";
 import { SomeService } from "./shared/services/some.service";
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
-import { PageComponent } from './page/page.component';
+import { TableComponent } from './table/table.component';
 import { FilterComponent } from "./shared/components/filter/filter.component";
 import { PanelComponent } from './shared/components/panel/panel.component';
 import { PreviewComponent } from './shared/components/preview/preview.component';
@@ -29,7 +29,7 @@ import { EmailService } from "./shared/services/email.services";
     SystemComponent,
     MomentPipe,
     PaginationComponent,
-    PageComponent,
+    TableComponent,
     FilterComponent,
     PanelComponent,
     PreviewComponent,

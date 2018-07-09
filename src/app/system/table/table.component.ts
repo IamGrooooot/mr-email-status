@@ -1,27 +1,25 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { IPage } from '../shared/interface/page.interface';
-import { IMessageInboxActive } from '../shared/interface/message.interfase';
+import { ITable } from '../shared/interface/table.interface';
+import { IMessageInboxActive } from '../shared/interface/message.interface';
 import { IChoiseMessage } from '../shared/interface/choise-message.interface';
+import { IPage } from '../shared/interface/page.interface';
 
 @Component({
-  selector: 'mr-page',
-  templateUrl: './page.component.html',
-  styleUrls: ['./page.component.sass']
+  selector: 'mr-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.sass']
 })
-export class PageComponent implements OnInit {
-  @Input() message: IMessageInboxActive[];
+export class TableComponent implements OnInit {
+  @Input() _message: IMessageInboxActive[];
+  @Input() page: IPage;
   @Output() choisedMessage = new EventEmitter<IChoiseMessage>();
 
-  // База для тестирования
-
-  // Работа с ID
-  pageId: string;
-  pageName: string;
+  message: IMessageInboxActive[];
 
   // Загрузка настройки страницы из json
-  page: IPage;
+  table: ITable;
   json = require('../shared/consts/page.json');
 
   // Отображение кнопок в Panel
@@ -36,12 +34,10 @@ export class PageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    
     this.route.params.subscribe(params => {
-      this.pageId = this.route.snapshot.params['page'];
-      this.page = this.json[this.pageId][0];
-      this.page.message = this.message;
-      console.log(this.page);
+      this.message = this._message;
+      this.table = this.json[this.page.table][0];
+      this.table.message = this.message;
     })
   }
 
@@ -49,7 +45,7 @@ export class PageComponent implements OnInit {
     this.choiseMessage = {
       isn: isn,
       choise: true,
-      visible_button: this.pageId === "inbox-active" ? true : false
+      visible_button: this.page.table === "inbox-active" ? true : false
     }
     this.choisedMessage.emit(this.choiseMessage);
   }

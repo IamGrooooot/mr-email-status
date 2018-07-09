@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { IChoiseMessage } from "./shared/interface/choise-message.interface";
-import { IMessageInboxActive } from "./shared/interface/message.interfase";
+import { IMessageInboxActive } from "./shared/interface/message.interface";
 import { IPagination } from "./shared/interface/pagination.interface";
+import { ActivatedRoute } from "@angular/router";
+import { IPage } from "./shared/interface/page.interface";
 
 @Component({
   selector: 'mr-system',
@@ -10,6 +12,9 @@ import { IPagination } from "./shared/interface/pagination.interface";
 })
 export class SystemComponent implements OnInit{
 
+  constructor(
+    private route: ActivatedRoute
+  ) {}
   message: IMessageInboxActive[] = [
     {
       checkbox: false,
@@ -519,7 +524,15 @@ export class SystemComponent implements OnInit{
 
   pagination: IPagination;
 
-  horizontalPreview: boolean;
+  viewModel: IMessageInboxActive[] = [];
+
+  page: IPage = {
+    table: '',
+    id: 1
+  };
+
+  onPageCountMessage: number = 5;
+
   showViewCustomization: boolean = false;
   choisedMessage: IChoiseMessage = {
     isn: '0',
@@ -528,8 +541,21 @@ export class SystemComponent implements OnInit{
   };
 
   ngOnInit(){
+
+    this.route.params.subscribe(params => {
+      this.page.table = this.route.snapshot.params['table'];
+      this.page.id = +this.route.snapshot.params['id'];
+
+      this.viewModel = [];
+      for(let i = 0; i < this.onPageCountMessage; i++){
+        this.viewModel.push(this.message[this.onPageCountMessage * this.page.id - i])
+      }
+      console.log(this.viewModel);
+      
+    })
+    
     this.pagination = {
-      onPageCountMessage : 2,
+      onPageCountMessage : this.onPageCountMessage,
       countMessage: this.message.length,
       navPagination: []
     }

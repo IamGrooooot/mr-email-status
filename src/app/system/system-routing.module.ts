@@ -9,11 +9,11 @@ const routes: Routes = [
     component: SystemComponent,
   },
   {
-    path: 'system/:page',
+    path: 'system/:table',
     component: SystemComponent,
   }  ,
   {
-    path: 'system/:page/:id',
+    path: 'system/:table/:id',
     component: SystemComponent,
   }
 ]

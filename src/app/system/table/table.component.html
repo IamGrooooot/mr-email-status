@@ -1,4 +1,4 @@
-<div class="row mr-page">
+<div class="row mr-table">
   <section class="content-area">
     <div class="table-area">
       <table class="responsive-table table">
@@ -17,7 +17,7 @@
             class="active-message"
             *ngFor="let m of page.message; let idx = index"
             [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? '#f8f8f8' : '#fff'}"
-            [ngClass]="{'active-message': m.active, 'choise-message': choiseMessage.isn == m.isn}"
+            [ngClass]="{'active-message': m.new, 'choise-message': choiseMessage.isn == m.isn}"
             (click)="someClick(m.isn)"
           >
             <td
