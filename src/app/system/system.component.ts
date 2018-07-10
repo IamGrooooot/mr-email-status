@@ -546,19 +546,22 @@ export class SystemComponent implements OnInit{
       this.page.table = this.route.snapshot.params['table'];
       this.page.id = +this.route.snapshot.params['id'];
 
+      this.pagination = {
+        onPageCountMessage : this.onPageCountMessage,
+        countMessage: this.message.length,
+        navPagination: []
+      }
+
+
       this.viewModel = [];
       for(let i = 0; i < this.onPageCountMessage; i++){
-        this.viewModel.push(this.message[this.onPageCountMessage * this.page.id - i])
+        if(this.onPageCountMessage * this.page.id - i - 1 <this.pagination.countMessage){
+          this.viewModel.push(this.message[this.onPageCountMessage * this.page.id - i - 1])
+        }
       }
-      console.log(this.viewModel);
-      
     })
     
-    this.pagination = {
-      onPageCountMessage : this.onPageCountMessage,
-      countMessage: this.message.length,
-      navPagination: []
-    }
+    
   }
 
   choiseMessage(choiseMessage: IChoiseMessage){

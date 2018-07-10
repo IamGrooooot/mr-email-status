@@ -12,11 +12,9 @@ import { IPage } from '../shared/interface/page.interface';
   styleUrls: ['./table.component.sass']
 })
 export class TableComponent implements OnInit {
-  @Input() _message: IMessageInboxActive[];
+  @Input() message: IMessageInboxActive[];
   @Input() page: IPage;
   @Output() choisedMessage = new EventEmitter<IChoiseMessage>();
-
-  message: IMessageInboxActive[];
 
   // Загрузка настройки страницы из json
   table: ITable;
@@ -30,15 +28,10 @@ export class TableComponent implements OnInit {
   };
 
   constructor(
-    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.message = this._message;
-      this.table = this.json[this.page.table][0];
-      this.table.message = this.message;
-    })
+    this.table = this.json[this.page.table][0];
   }
 
   someClick(isn){

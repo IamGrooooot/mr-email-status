@@ -5,7 +5,7 @@
         <thead>
           <tr>
             <th
-              *ngFor="let c of page.column"
+              *ngFor="let c of table.column"
               [ngStyle]="{'width': c.width + '%'}"
             >
               {{c.name}}
@@ -13,33 +13,35 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            class="active-message"
-            *ngFor="let m of page.message; let idx = index"
-            [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? '#f8f8f8' : '#fff'}"
-            [ngClass]="{'active-message': m.new, 'choise-message': choiseMessage.isn == m.isn}"
-            (click)="someClick(m.isn)"
-          >
-            <td
-              *ngFor="let c of page.column"
-              [ngStyle]="{'width': c.width + '%'}"
+          <ng-container>
+            <tr
+              class="active-message"
+              *ngFor="let m of message; let idx = index"
+              [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? '#f8f8f8' : '#fff'}"
+              [ngClass]="{'active-message': m.new, 'choise-message': choiseMessage.isn == m.isn}"
+              (click)="someClick(m.isn)"
             >
-              <ng-container
-                *ngIf="isArray(m[c.id]); then thenBlock else elseBlock"
+              <td
+                *ngFor="let c of table.column"
+                [ngStyle]="{'width': c.width + '%'}"
               >
-              </ng-container>
-              <ng-template #thenBlock>
-                <p
-                  *ngFor="let v of m[c.id]"
+                <ng-container
+                  *ngIf="isArray(m[c.id]); then thenBlock else elseBlock"
                 >
-                  {{v}}
-                </p>
-              </ng-template>
-              <ng-template #elseBlock>
-                {{m[c.id]}}
-              </ng-template>
-            </td>
-          </tr>
+                </ng-container>
+                <ng-template #thenBlock>
+                  <p
+                    *ngFor="let v of m[c.id]"
+                  >
+                    {{v}}
+                  </p>
+                </ng-template>
+                <ng-template #elseBlock>
+                  {{m[c.id]}}
+                </ng-template>
+              </td>
+            </tr>
+          </ng-container>
         </tbody>
       </table>
     </div>

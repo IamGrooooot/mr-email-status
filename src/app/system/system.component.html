@@ -5,7 +5,6 @@
 >
 </div>
 <mr-filter *ngIf="showViewCustomization"></mr-filter>
-
 <mr-navbar></mr-navbar>
 <div class="container-fluid">
   <mr-panel
@@ -14,13 +13,13 @@
   ></mr-panel>
   <mr-table
     [page]="page"
-    [_message]="viewModel"
+    [message]="viewModel"
     (choisedMessage)="choiseMessage($event)"
   ></mr-table>
   <mr-preview></mr-preview>
   <mr-pagination
     [message]="message"
-    [pagination]="pagination"
+    [_pagination]="pagination"
     [page]="page"
   ></mr-pagination>
 </div>

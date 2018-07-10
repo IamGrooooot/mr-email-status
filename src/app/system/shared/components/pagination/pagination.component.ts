@@ -12,8 +12,10 @@ import { IPage } from '../../interface/page.interface';
 export class PaginationComponent implements OnInit {
 
   @Input() message: IMessageInboxActive[];
-  @Input() pagination: IPagination;
+  @Input() _pagination: IPagination;
   @Input() page: IPage;
+
+  pagination: IPagination;
   // Работа с URL
   countMessage: number;
   countNavPagination: number;
@@ -24,6 +26,7 @@ export class PaginationComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      this.pagination = this._pagination;
       this.countMessage = this.pagination.countMessage;
       this.countNavPagination = Math.ceil(this.countMessage / this.pagination.onPageCountMessage);
       this.CreateNav(this.countNavPagination);

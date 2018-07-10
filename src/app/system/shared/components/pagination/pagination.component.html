@@ -3,7 +3,7 @@
         <a *ngFor="let n of pagination.navPagination"
             routerLinkActive="mr-pagination-active"
             class="nav-link"
-            [ngClass]="{'mr-disabled': n.Id === -1 || n.Id > countNavPagination && n.Name === '>' || n.Id < 1 && n.Name === '<' || n.Id == pageNum }"
+            [ngClass]="{'mr-disabled': n.Id === -1 || n.Id > countNavPagination && n.Name === '>' || n.Id < 1 && n.Name === '<' || n.Id == page.id }"
             [routerLink]="['/system',page.table ,n.Id]"
         >
             <span>{{n.Name}}</span>
