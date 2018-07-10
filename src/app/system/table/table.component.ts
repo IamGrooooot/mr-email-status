@@ -1,10 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ITable } from '../shared/interface/table.interface';
 import { IMessageInboxActive } from '../shared/interface/message.interface';
 import { IChoiseMessage } from '../shared/interface/choise-message.interface';
 import { IPage } from '../shared/interface/page.interface';
+import { Subscription } from '../../../../node_modules/rxjs';
 
 @Component({
   selector: 'mr-table',
@@ -12,26 +13,28 @@ import { IPage } from '../shared/interface/page.interface';
   styleUrls: ['./table.component.sass']
 })
 export class TableComponent implements OnInit {
-  @Input() message: IMessageInboxActive[];
+  @Input() _message: IMessageInboxActive[];
   @Input() page: IPage;
-  @Output() choisedMessage = new EventEmitter<IChoiseMessage>();
+
+  message: IMessageInboxActive[];
 
   // Загрузка настройки страницы из json
   table: ITable;
   json = require('../shared/consts/page.json');
 
   // Отображение кнопок в Panel
-  choiseMessage: IChoiseMessage = {
-    isn: '0',
-    choise: false,
-    visible_button: false
-  };
+  choiseMessage: IChoiseMessage;
 
   constructor(
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.table = this.json[this.page.table][0];
+    this.route.params.subscribe(params => {
+      this.message = this._message;
+      this.someClick(this.message[0].isn);
+    });
   }
 
   someClick(isn){
@@ -40,7 +43,9 @@ export class TableComponent implements OnInit {
       choise: true,
       visible_button: this.page.table === "inbox-active" ? true : false
     }
-    this.choisedMessage.emit(this.choiseMessage);
+    console.log(this.choiseMessage);
+    console.log(this.message);
+
   }
 
   // Отображение массива в столбцах

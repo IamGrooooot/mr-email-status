@@ -1,5 +1,5 @@
 export interface IChoiseMessage{
-  isn: string;
+  isn: number;
   choise: boolean;
   visible_button: boolean;
 }

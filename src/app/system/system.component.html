@@ -8,17 +8,14 @@
 <mr-navbar></mr-navbar>
 <div class="container-fluid">
   <mr-panel
-    [choiseMessage]="choisedMessage"
     (customization)="viewCustomization($event)"
   ></mr-panel>
   <mr-table
     [page]="page"
-    [message]="viewModel"
-    (choisedMessage)="choiseMessage($event)"
+    [_message]="viewModel"
   ></mr-table>
   <mr-preview></mr-preview>
   <mr-pagination
-    [message]="message"
     [_pagination]="pagination"
     [page]="page"
   ></mr-pagination>

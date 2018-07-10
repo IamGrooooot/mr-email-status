@@ -10,7 +10,6 @@ import { IChoiseMessage } from '../../interface/choise-message.interface';
 })
 export class PanelComponent implements OnInit {
 
-  @Input() choiseMessage: IChoiseMessage;
   @Output() customization = new EventEmitter<boolean>();
 
   viewCustomization: boolean = false;
@@ -29,14 +28,6 @@ export class PanelComponent implements OnInit {
     ///this.dangerousUrl = 'javascript:reg(' + this.gButton.isn + ')';
     this.dangerousUrl = 'https://github.com/IamGrooooot';
     this.trustedUrl = this.normalUrl.bypassSecurityTrustUrl(this.dangerousUrl);
-  }
-
-  reverseButton(){
-    this.choiseMessage = {
-      isn: '0',
-      choise: false,
-      visible_button: false
-    }
   }
 
   showViewCustomization(){

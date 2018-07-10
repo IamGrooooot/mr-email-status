@@ -534,14 +534,8 @@ export class SystemComponent implements OnInit{
   onPageCountMessage: number = 5;
 
   showViewCustomization: boolean = false;
-  choisedMessage: IChoiseMessage = {
-    isn: '0',
-    choise: false,
-    visible_button: false
-  };
 
   ngOnInit(){
-
     this.route.params.subscribe(params => {
       this.page.table = this.route.snapshot.params['table'];
       this.page.id = +this.route.snapshot.params['id'];
@@ -552,7 +546,6 @@ export class SystemComponent implements OnInit{
         navPagination: []
       }
 
-
       this.viewModel = [];
       for(let i = 0; i < this.onPageCountMessage; i++){
         if(this.onPageCountMessage * this.page.id - i - 1 <this.pagination.countMessage){
@@ -560,13 +553,6 @@ export class SystemComponent implements OnInit{
         }
       }
     })
-    
-    
-  }
-
-  choiseMessage(choiseMessage: IChoiseMessage){
-    this.choisedMessage = choiseMessage;
-    console.log(this.choisedMessage);
   }
 
   viewCustomization(customization: boolean){

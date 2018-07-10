@@ -11,7 +11,6 @@ import { IPage } from '../../interface/page.interface';
 })
 export class PaginationComponent implements OnInit {
 
-  @Input() message: IMessageInboxActive[];
   @Input() _pagination: IPagination;
   @Input() page: IPage;
 
