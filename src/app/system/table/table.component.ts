@@ -37,7 +37,7 @@ export class TableComponent implements OnInit {
     });
   }
 
-  someClick(isn){
+  someClick(isn: number){
     this.choiseMessage = {
       isn: isn,
       choise: true,

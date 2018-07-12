@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 export class SomeService {
   private _subject = new Subject<any>();
 
-  newEvent(event){
+  newEvent(event: any){
     this._subject.next(event);
   }
 

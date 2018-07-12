@@ -5,14 +5,6 @@ import { SystemComponent } from "./system.component";
 
 const routes: Routes = [
   {
-    path:'system',
-    component: SystemComponent,
-  },
-  {
-    path: 'system/:table',
-    component: SystemComponent,
-  }  ,
-  {
     path: 'system/:table/:id',
     component: SystemComponent,
   }
