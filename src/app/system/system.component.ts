@@ -4,6 +4,8 @@ import { IMessageInboxActive } from "./shared/interface/message.interface";
 import { IPagination } from "./shared/interface/pagination.interface";
 import { ActivatedRoute } from "@angular/router";
 import { IPage } from "./shared/interface/page.interface";
+import { EmailService } from "./shared/services/email.services";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'mr-system',
@@ -13,7 +15,8 @@ import { IPage } from "./shared/interface/page.interface";
 export class SystemComponent implements OnInit{
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private emailService: EmailService
   ) {}
   message: IMessageInboxActive[] = [
     {
@@ -536,6 +539,11 @@ export class SystemComponent implements OnInit{
   showViewCustomization: boolean = false;
 
   ngOnInit(){
+
+    
+  this.emailService.postEmail()
+      .subscribe(x => console.log(x));
+
     this.route.params.subscribe(params => {
       this.page.table = this.route.snapshot.params['table'];
       this.page.id = +this.route.snapshot.params['id'];

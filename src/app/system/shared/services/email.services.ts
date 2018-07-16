@@ -14,14 +14,14 @@ export class EmailService extends BaseApi{
   }
 
   getEmail(url: string) : Observable<any>{
-    return this.httpClient.get(url);
+    return this.get(url);
   }
 
-  postEmail(url: string) : Observable<any>{
-    return this.httpClient.post(url, {});
+  postEmail() : Observable<any>{
+    return this.post('EmailMessage', {});
   }
 
   updateBufMessage(isnMessage: string) : Observable<any>{
-    return this.httpClient.post('', isnMessage);
+    return this.post('', isnMessage);
   }
 }
